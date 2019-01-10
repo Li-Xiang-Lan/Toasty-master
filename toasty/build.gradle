@@ -1,0 +1,38 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion '26.0.2'
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        aaptOptions {
+            additionalParameters "--no-version-vectors"
+        }
+
+    }
+    compileOptions {
+        targetCompatibility org.gradle.api.JavaVersion.VERSION_1_8
+        sourceCompatibility org.gradle.api.JavaVersion.VERSION_1_8
+    }
+    buildTypes {
+        debug {
+        }
+
+        common {
+        }
+
+        release {
+            minifyEnabled false
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "com.android.support:appcompat-v7:26.1.0"
+}
